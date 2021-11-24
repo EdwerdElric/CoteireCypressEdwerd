@@ -1,0 +1,28 @@
+{
+    "industryData": {
+        "businessType": "Accountant",
+        "businessUpdate": "Accountants' (i.e., CPAs) offices, certified public",
+        "unsupportedIndustries": [
+            "tree trimmers",
+            "roofing contractors",
+            "traffic work & flagging",
+            "aerospace equipment",
+            "stucco and stucco products manufacturing",
+            "flame safety controls",
+            "playground installation",
+            "millwrights",
+            "• playground equipment and supplies merchant wholesalers",
+            "caulking materials merchant wholesalers",
+            "oil rigs",
+            "gas stations",
+            "mining"
+        ]
+    },
+    "businessInfoData": {
+        "businessName": "Test business name",
+        "emloyeesNumber": "50",
+        "state": "KY",
+        "zipCode": "41008",
+        "claimAmount": "$10,000"
+    }
+}
