@@ -48,4 +48,8 @@ export default class GlobalTestObjectsPage {
         cy.get(''.concat(tag, '[').concat(locator, '="').concat(selector, '"]')).should('be.visible');
     }
 
+    verifyPageURL(pageURL) {
+        cy.url().should('include', pageURL);
+    }
+
 }

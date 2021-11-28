@@ -32,7 +32,6 @@ describe('Industry Test Suite', () => {
 
     context('Negative Scenarios', ()=> {
         beforeEach(() => {
-
             globalObjects.navigateTo('Quote Flow');
         })
     

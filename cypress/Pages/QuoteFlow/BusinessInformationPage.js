@@ -13,6 +13,7 @@ export default class BusinessInformationPage {
         cy.get('button[aria-label="Business is '.concat(years, " years old").concat('"]')).click();
         cy.get('button[aria-label="Business is '.concat(years, " years old").concat('"][aria-pressed="true"]')).should('be.visible');
     }
+  
 
     selectNumberOfEmpRange(empRange) {
         switch (empRange) {
