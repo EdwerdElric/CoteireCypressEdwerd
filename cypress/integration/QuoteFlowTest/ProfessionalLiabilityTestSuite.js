@@ -1,11 +1,15 @@
 /// <reference types="Cypress" />
 
 import GlobalTestObjectsPage from "../../Pages/QuoteFlow/GlobalTestObjectsPage";
-import IndustryPage from "../../Pages/QuoteFlow/IndstryPage"; 
-import BusinessInformationPage from "../../pages/QuoteFlow/BusinessInformationPage";
-import PoliciesPage from "../../Pages/QuoteFlow/PoliciesPage";
+import IndustryPage from "../../Pages/QuoteFlow/IndstryPage";
+import BusinessInformationPage from "../../Pages/QuoteFlow/BusinessInformationPage";
 import FinanceBasicsPage from "../../Pages/QuoteFlow/FinanceBasicPage";
+import PoliciesPage from "../../Pages/QuoteFlow/PoliciesPage";
+import LocationsPage from "../../Pages/QuoteFlow/LocationsPage";
+import GeneralLiabilityPage from "../../Pages/QuoteFlow/GeneralLiabilityPage";
 import ProfessionalLiabilityPage from "../../Pages/QuoteFlow/ProfessionalLiabilityPage";
+
+
 
 describe('Professional Liability Test Suite', () => {
 
