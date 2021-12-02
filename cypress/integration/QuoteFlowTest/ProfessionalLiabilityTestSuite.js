@@ -16,6 +16,8 @@ describe('Professional Liability Test Suite', () => {
     const globalObjects = new GlobalTestObjectsPage();
     const policy = new PoliciesPage();
     const finance = new FinanceBasicsPage();
+    const location = new LocationsPage();
+    const generalLiability = new GeneralLiabilityPage();
     const ProfessionalLiability = new ProfessionalLiabilityPage();
 
     beforeEach(() => {
