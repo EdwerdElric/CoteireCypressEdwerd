@@ -2,14 +2,14 @@ import { data } from "cypress/types/jquery";
 
 export default class ProfessionalLiabilityPage {
 
-    // // Check if the user is able to see the default active link of "General Liability" under the left Main menu.
-    // checkProfessionalliabilityPage() {
-    //     cy.get('class="sc-hqyNC sc-jbKcbu cFItMM activeLink"').should('not.be.disabled');
-    // }
-    // // Check that the user is successfully redirected to the page of Professional Liability .
-    // verifyProfessionalliabilityPage() {
-    //     cy.url().should('include', '/getquote/pl');
-    // }
+    // Check if the user is able to see the default active link of "General Liability" under the left Main menu.
+    checkProfessionalliabilityPage() {
+        cy.get('class="sc-hqyNC sc-jbKcbu cFItMM activeLink"').should('not.be.disabled');
+    }
+    // Check that the user is successfully redirected to the page of Professional Liability .
+    verifyProfessionalliabilityPage() {
+        cy.url().should('include', '/getquote/pl');
+    }
     // For professional liability claims amount . 
     selectPlClaims(claims) {
         cy.fixture('QuoteFlowData',).then(data => {
