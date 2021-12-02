@@ -1,4 +1,4 @@
-import { data } from "cypress/types/jquery";
+
 
 export default class ProfessionalLiabilityPage {
 
