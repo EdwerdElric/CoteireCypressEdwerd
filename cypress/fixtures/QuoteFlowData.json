@@ -1,4 +1,6 @@
+    
 {
+   
     "industryData": {
         "businessType": "Accountant",
         "businessUpdate": "Accountants' (i.e., CPAs) offices, certified public",
@@ -65,5 +67,66 @@
             "propertyAndEquipment": "$150,000",
             "buildingCoverege": "$200"
         }
-    ]
+    ],
+    "generalLiabilityData": {
+        "coverage": [
+            "300000",
+            "500000",
+            "1000000"
+        ],
+        "deductible2": [
+            "250",
+            "500",
+            "1000",
+            "2500"
+        ]
+
+    
+    },
+    "profissionalLiabilityData": {
+        "claims": [
+            "25000",
+            "50000",
+            "250000",
+            "500000",
+            "1000000"
+        ],
+        "plDeductible": [
+            "0",
+            "250",
+            "750",
+            "1500",
+            "2500",
+            "5000",
+            "7500",
+            "20000",
+            "50000"
+        ],
+        "plCoveragePeriod": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+        ],
+        "plEndDate": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+        ],
+        "professionalExp": [
+             "Yes", 
+             "No"
+        ],
+        "expYears": "4",
+        "price": "$114.08"
+
+    }
+    
 }
