@@ -63,17 +63,17 @@ export default class ProfessionalLiabilityPage {
     // Preform flow .
     performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, professionalExp, expYears) {
         this.checkProfessionalliabilityPage();
-        this.verifyProfessionalliabilityPage();
-        this.selectPlClaims(claims);
+        // this.verifyProfessionalliabilityPage();
+        // this.selectPlClaims(claims);
+        // // this.checkEstimatedPrice();
+        // this.selectPlDeductible(plDeductible);
+        // // this.checkEstimatedPrice();
+        // this.selectPlCoveragePeriod(plCoveragePeriod);
+        // // this.checkEstimatedPrice();
+        // this.selectEndDate(plEndDate);
+        // // this.checkEstimatedPrice();
+        // this.selectProfessionalExperience(professionalExp, expYears);
         // this.checkEstimatedPrice();
-        this.selectPlDeductible(plDeductible);
-        // this.checkEstimatedPrice();
-        this.selectPlCoveragePeriod(plCoveragePeriod);
-        // this.checkEstimatedPrice();
-        this.selectEndDate(plEndDate);
-        // this.checkEstimatedPrice();
-        this.selectProfessionalExperience(professionalExp, expYears);
-        this.checkEstimatedPrice();
     }
 
 
