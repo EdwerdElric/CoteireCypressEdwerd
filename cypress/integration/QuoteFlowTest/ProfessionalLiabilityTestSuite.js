@@ -5,8 +5,6 @@ import IndustryPage from "../../Pages/QuoteFlow/IndstryPage";
 import BusinessInformationPage from "../../pages/QuoteFlow/BusinessInformationPage";
 import PoliciesPage from "../../Pages/QuoteFlow/PoliciesPage";
 import FinanceBasicsPage from "../../Pages/QuoteFlow/FinanceBasicPage";
-import LocationsPage from "../../Pages/QuoteFlow/LocationsPage";
-import GeneralLiabilityPage from "../../Pages/QuoteFlow/GeneralLiabilityPage";
 import ProfessionalLiabilityPage from "../../Pages/QuoteFlow/ProfessionalLiabilityPage";
 
 describe('Professional Liability Test Suite', () => {
@@ -16,8 +14,6 @@ describe('Professional Liability Test Suite', () => {
     const globalObjects = new GlobalTestObjectsPage();
     const policy = new PoliciesPage();
     const finance = new FinanceBasicsPage();
-    const location = new LocationsPage();
-    const generalLiability = new GeneralLiabilityPage();
     const ProfessionalLiability = new ProfessionalLiabilityPage();
 
     beforeEach(() => {
