@@ -67,4 +67,10 @@ describe('Professional Liability Test Suite', () => {
 
         }) 
     })
+    it('TC002 Verify that the user is able to submit the professional liability policy form successfully by selecting the amount of professional liability claims $50.000', () => {
+        cy.fixture('QuoteFlowData').then(data => {
+            ProfessionalLiability.performProfessionalLiabilityFlow(data.profissionalLiabilityData.claims[1], data.profissionalLiabilityData.plDeductible[1], data.profissionalLiabilityData.plCoveragePeriod[1], data.profissionalLiabilityData.plEndDate[1], data.profissionalLiabilityData.maintainedEXP[1], data.profissionalLiabilityData.requirmentEXP[1], "4");
+
+        }) 
+    })
 })
