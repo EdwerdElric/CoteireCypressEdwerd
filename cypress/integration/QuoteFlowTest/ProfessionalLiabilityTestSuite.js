@@ -79,4 +79,16 @@ describe('Professional Liability Test Suite', () => {
 
         }) 
     })
+    it('TC004 Verify that the user is able to submit the professional liability policy form successfully by selecting the amount of deductible is None', () => {
+        cy.fixture('QuoteFlowData').then(data => {
+            ProfessionalLiability.performProfessionalLiabilityFlow(data.profissionalLiabilityData.claims[2], data.profissionalLiabilityData.plDeductible[4], data.profissionalLiabilityData.plCoveragePeriod[0], data.profissionalLiabilityData.plEndDate[1], data.profissionalLiabilityData.requirmentEXP[1], data.profissionalLiabilityData.maintainedEXP[0], "4");
+
+        }) 
+    })
+    it('TC005 Verify that the user is able to submit the professional liability policy form successfully by selecting the amount of deductible $5,000', () => {
+        cy.fixture('QuoteFlowData').then(data => {
+            ProfessionalLiability.performProfessionalLiabilityFlow(data.profissionalLiabilityData.claims[2], data.profissionalLiabilityData.plDeductible[5], data.profissionalLiabilityData.plCoveragePeriod[3], data.profissionalLiabilityData.plEndDate[0], data.profissionalLiabilityData.requirmentEXP[0], data.profissionalLiabilityData.maintainedEXP[0], "4");
+
+        }) 
+    })
 })
