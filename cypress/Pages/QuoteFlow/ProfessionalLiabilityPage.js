@@ -30,8 +30,8 @@ export default class ProfessionalLiabilityPage {
         if (plCoveragePeriod == 0){
             cy.get('button[aria-label="Years of prior acts coverage: '+plCoveragePeriod+'"]').contains('None').click();
         }
-        else if (plCoveragePeriod == 7) {
-            break;
+        else {
+            cy.get('button[aria-label="Years of prior acts coverage: '+"0"+"1"+"2"+"3"+"4"+"5"+"6"+'"]').should('be.visible');
         }
         })
         // contains(plCoveragePeriod+' years');
