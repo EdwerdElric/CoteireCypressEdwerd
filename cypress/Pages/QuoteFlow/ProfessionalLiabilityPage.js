@@ -13,20 +13,20 @@ export default class ProfessionalLiabilityPage {
     // For professional liability claims amount . 
     selectPlClaims(claims) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[data-cy="multi-button-'+claims+'"]').should('not.be.disabled');
+            cy.get('button[data-cy="multi-button-'+claims+'"]').click().should('not.be.disabled');
         })
     }
     // For professional liability deductible amount .
     selectPlDeductible(plDeductible) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[data-cy="multi-button-'+plDeductible+'"]').should('not.be.disabled');
+            cy.get('button[data-cy="multi-button-'+plDeductible+'"]').click().should('not.be.disabled');
         })
         
     }
     // Policy coverage period .
     selectPlCoveragePeriod(plCoveragePeriod) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[data-cy="multi-button-'+plCoveragePeriod+'"]').should('be.visible');
+            cy.get('button[data-cy="multi-button-'+plCoveragePeriod+'"]').click().should('be.visible');
         if (plCoveragePeriod == 0){
             cy.get('button[data-cy="multi-button-'+plCoveragePeriod+'"]').contains('None').click();
         }
@@ -36,7 +36,7 @@ export default class ProfessionalLiabilityPage {
     // End date .
     selectEndDate(plEndDate) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[aria-label="Period after can file a claim: '+plEndDate+'"]').should('be.visible');
+            cy.get('button[aria-label="Period after can file a claim: '+plEndDate+'"]').click().should('be.visible');
             if (plEndDate == 0) {
                 cy.get('button[aria-label="Period after can file a claim: '+plEndDate+'"]').contains('90 days').click();
             }
