@@ -42,7 +42,11 @@ export default class ProfessionalLiabilityPage {
     }
     // Check Estimated price .
     checkEstimatedPrice() {
-        cy.get('[data-cy="premium"]').should('not.have.text', '$--');
+        cy.get('[data-cy="premium"]').then(() => {
+            expect('h3[class="sc-gzOgki dOfNZq"]').to.not.equal('$--')
+        })
+
+        // cy.get('[data-cy="premium"]').should('not.have.text', '$--');
     }
     // Preform flow .
     performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, requirmentEXP, maintainedEXP, professionalExp) {
