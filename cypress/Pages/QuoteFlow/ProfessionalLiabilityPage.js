@@ -12,50 +12,39 @@ export default class ProfessionalLiabilityPage {
     }
     // For professional liability claims amount . 
     selectPlClaims(claims) {
-            cy.get('button[aria-label="Professional liability claims coverage amount: '+claims+'"]').click().should('not.be.disabled');
-        
+        cy.get('button[aria-label="Professional liability claims coverage amount: ' + claims + '"]').click().should('not.be.disabled');
     }
     // For professional liability deductible amount .
     selectPlDeductible(plDeductible) {
-            cy.get('button[aria-label="Professional liability claims deductible amount: '+plDeductible+'"]').click().should('not.be.disabled');
-            }
+        cy.get('button[aria-label="Professional liability claims deductible amount: ' + plDeductible + '"]').click().should('not.be.disabled');
+    }
     // Policy coverage period .
     selectPlCoveragePeriod(plCoveragePeriod) {
-            cy.get('button[aria-label="Years of prior acts coverage: '+plCoveragePeriod+'"]').click().should('be.visible');
-        if (plCoveragePeriod == 0){
-            cy.get('button[aria-label="Years of prior acts coverage: '+plCoveragePeriod+'"]').contains('None').click();
+        cy.get('button[aria-label="Years of prior acts coverage: ' + plCoveragePeriod + '"]').click().should('be.visible');
+        if (plCoveragePeriod == 0) {
+            cy.get('button[aria-label="Years of prior acts coverage: ' + plCoveragePeriod + '"]').contains('None').click().should('be.visible');
         }
     }
     // End date .
     selectEndDate(plEndDate) {
-                   cy.get('button[aria-label="Period after can file a claim: '+plEndDate+'"]').click().should('be.visible');
-            if (plEndDate == 0) {
-                cy.get('button[aria-label="Period after can file a claim: '+plEndDate+'"]').contains('90 days').click();
-            }
+        cy.get('button[aria-label="Period after can file a claim: ' + plEndDate + '"]').click().should('be.visible');
+        if (plEndDate == 0) {
+            cy.get('button[aria-label="Period after can file a claim: ' + plEndDate + '"]').contains('90 days').click().should('be.visible');
         }
+    }
     // Professional Experience .
     selectProfessionalExperience(requirmentEXP, maintainedEXP, professionalExp) {
-                   cy.get('div[class="sc-hGoxap bncZFl"]').should('be.visible');
-            if(requirmentEXP == "Yes") {
-                cy.get('button[data-cy="yes-certificationsRequired"]').click().should('be.visible');
-            }
-            else if (requirmentEXP == "No") {
-                cy.get('button[data-cy="no-certificationsRequired"]').click().should('be.visible');
-            }
-            cy.get('div[class="sc-CtfFt laLsLM"]').should('be.visible');
-            if(maintainedEXP == "Yes") {
-                cy.get('button[data-cy="yes-certificationsMaintained"]').click().should('be.visible');
-            }
-            else if (maintainedEXP == "No") {
-                cy.get('button[data-cy="no-certificationsMaintained"]').click().should('be.visible');
-            }
-            cy.get('input[data-cy="years-of-professional-experience"]').type(professionalExp).should('be.visible');
-        }
+        cy.get('div[class="sc-hGoxap bncZFl"]').should('be.visible');
+        cy.get('button[data-cy="' + requirmentEXP + '-certificationsRequired"]').click().should('be.visible');
+        cy.get('div[class="sc-CtfFt laLsLM"]').should('be.visible');
+        cy.get('button[data-cy="' + maintainedEXP + '-certificationsMaintained"]').click().should('be.visible');
+        cy.get('input[data-cy="years-of-professional-experience"]').type(professionalExp).should('be.visible');
+    }
     // Check Estimated price .
     checkEstimatedPrice() {
-                   cy.get('div[class="sc-iyvyFf gljgVk"]').children('h3[class="sc-gzOgki dOfNZq"]').then( () => {
-                expect('h3[class="sc-gzOgki dOfNZq"]').not.to.equal('$--');
-            })    
+        cy.get('div[class="sc-iyvyFf gljgVk"]').children('h3[class="sc-gzOgki dOfNZq"]').then(() => {
+            expect('h3[class="sc-gzOgki dOfNZq"]').not.to.equal('$--');
+        })
     }
     // Preform flow .
     performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, requirmentEXP, maintainedEXP, professionalExp) {
