@@ -13,13 +13,13 @@ export default class ProfessionalLiabilityPage {
     // For professional liability claims amount . 
     selectPlClaims(claims) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[data-cy="multi-button-'+claims+'"]').click().should('not.be.disabled');
+            cy.get('button[aria-label="Professional liability claims coverage amount: '+claims+'"]').click().should('not.be.disabled');
         })
     }
     // For professional liability deductible amount .
     selectPlDeductible(plDeductible) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[data-cy="multi-button-'+plDeductible+'"]').click().should('not.be.disabled');
+            cy.get('button[aria-label="Professional liability claims deductible amount: '+plDeductible+'"]').click().should('not.be.disabled');
         })
         
     }
