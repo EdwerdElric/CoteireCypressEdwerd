@@ -62,7 +62,7 @@ export default class ProfessionalLiabilityPage {
     }
     // test child
     testChildClass(){
-        cy.get('div[class="sc-dymIpo iFhGBf"]').children('div[data-cy="multi-button-0"]').click();
+        cy.get('div[class="sc-dymIpo iFhGBf"]').children('button[data-cy="multi-button-0"]').should('be.visible');
     }
     // Preform flow .
     performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, professionalExp) {
