@@ -65,10 +65,10 @@ export default class ProfessionalLiabilityPage {
         
     }
     // Check Estimated price .
-    checkEstimatedPrice() {
+    checkEstimatedPrice(price) {
         cy.fixture('QuoteFlowData',).then(data => {
-            // cy.get('div[data-cy="quote-box"]').children('h3[data-cy="premium"]').contains(price);
-            cy.get('div[class="sc-elJkPf fcxcRl"]').children('h3[class="sc-gzOgki dOfNZq"]').should('be.visible');
+            // cy.get('div[class="sc-gleUXh etspqB"]').children('h3[data-cy="premium"]').contains(price);
+            cy.get('div[class="sc-iyvyFf gljgVk"]').children('h3[class="sc-gzOgki dOfNZq"]').contains(price);
         })
        
     }
@@ -90,7 +90,7 @@ export default class ProfessionalLiabilityPage {
         this.selectEndDate(plEndDate);
         // this.checkEstimatedPrice();
         this.selectProfessionalExperience(requirmentEXP, maintainedEXP, professionalExp);
-        this.checkEstimatedPrice();
+        this.checkEstimatedPrice(price);
     }
 
 
