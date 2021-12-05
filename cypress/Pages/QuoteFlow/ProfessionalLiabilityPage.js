@@ -77,7 +77,7 @@ export default class ProfessionalLiabilityPage {
         cy.get('div[class="sc-dymIpo iFhGBf"]').children('button[data-cy="multi-button-0"]').should('be.visible');
     }
     // Preform flow .
-    performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, requirmentEXP, maintainedEXP, professionalExp) {
+    performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, requirmentEXP, maintainedEXP, professionalExp, price) {
         this.testChildClass();
         this.checkProfessionalliabilityPage();
         this.verifyProfessionalliabilityPage();
