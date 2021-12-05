@@ -44,13 +44,25 @@ export default class ProfessionalLiabilityPage {
         // contains(plEndDate+' years');
     }
     // Professional Experience .
-    selectProfessionalExperience(professionalExp, expYears) {
+    selectProfessionalExperience(requirmentEXP, maintainedEXP, professionalExp) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[aria-label="Does your industry require professional certifications? '+professionalExp+'"]').should('be.visible');
-            cy.get('button[aria-label="Do you maintain professional certifications? '+professionalExp+'"]').should('be.visible');
-            cy.get('input[data-cy="years-of-professional-experience"]').type(expYears).should('have.value', 'expYears');
+            cy.get('div[class="sc-hGoxap bncZFl"]').should('be.visible');
+            if(requirmentEXP == "Yes") {
+                cy.get('button[data-cy="yes-certificationsRequired"]').click().should('be.visible');
+            }
+            else if (requirmentEXP == "No") {
+                cy.get('button[data-cy="no-certificationsRequired"]').click().should('be.visible');
+            }
+            cy.get('div[class="sc-CtfFt laLsLM"]').should('be.visible');
+            if(maintainedEXP == "Yes") {
+                cy.get('button[data-cy="yes-certificationsMaintained"]').click().should('be.visible');
+            }
+            else if (maintainedEXP == "No") {
+                cy.get('button[data-cy="no-certificationsMaintained"]').click().should('be.visible');
+            }
+            cy.get('input[data-cy="years-of-professional-experience"]').type(professionalExp).should('be.visible');
         })
-        // , expYears
+        
     }
     // Check Estimated price .
     checkEstimatedPrice() {
@@ -65,7 +77,7 @@ export default class ProfessionalLiabilityPage {
         cy.get('div[class="sc-dymIpo iFhGBf"]').children('button[data-cy="multi-button-0"]').should('be.visible');
     }
     // Preform flow .
-    performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, professionalExp, expYears) {
+    performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, requirmentEXP, maintainedEXP, professionalExp) {
         this.testChildClass();
         this.checkProfessionalliabilityPage();
         this.verifyProfessionalliabilityPage();
@@ -77,7 +89,7 @@ export default class ProfessionalLiabilityPage {
         // this.checkEstimatedPrice();
         this.selectEndDate(plEndDate);
         // this.checkEstimatedPrice();
-        this.selectProfessionalExperience(professionalExp, expYears);
+        this.selectProfessionalExperience(requirmentEXP, maintainedEXP, professionalExp);
         this.checkEstimatedPrice();
     }
 

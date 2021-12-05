@@ -120,11 +120,15 @@
             "5",
             "6"
         ],
-        "professionalExp": [
+        "maintainedEXP": [
              "Yes", 
              "No"
         ],
-        "expYears": "4",
+        "requirmentEXP": [
+            "Yes",
+            "No"
+        ],
+        "professionalExp": "4",
         "price": "$114.08"
 
     }
