@@ -1,4 +1,13 @@
 
+Cypress.Commands.add('getMulti', (selectors) => {
+    cy.document().then(($document) => {
+        selectors.forEach(selector => {
+          if($document.querySelector(selector)){
+              return cy.get(selector).first()
+          }
+        })
+    })
+})
 
 export default class ProfessionalLiabilityPage {
 
@@ -30,11 +39,13 @@ export default class ProfessionalLiabilityPage {
         if (plCoveragePeriod == 0){
             cy.get('button[aria-label="Years of prior acts coverage: '+plCoveragePeriod+'"]').contains('None').click();
         }
-        else {
-            cy.get('button[aria-label="Years of prior acts coverage: '+"0"+"1"+"2"+"3"+"4"+"5"+"6"+'"]').should('be.visible');
+        else if (noSelectPeriod == 0) {
+         for (var i = 0; i <= 7; i++) {
+            cy.get('button[aria-label="Period after can file a claim: ' + i + '"]').should('be.visible');
+         }        
         }
         })
-        // contains(plCoveragePeriod+' years');
+        
     }
     // End date .
     selectEndDate(plEndDate) {
