@@ -68,7 +68,7 @@ export default class ProfessionalLiabilityPage {
     checkEstimatedPrice(price) {
         cy.fixture('QuoteFlowData',).then(data => {
             // cy.get('div[class="sc-gleUXh etspqB"]').children('h3[data-cy="premium"]').contains(price);
-            cy.get('div[class="sc-iyvyFf gljgVk"]').children('h3[class="sc-gzOgki dOfNZq"]').expect(price).to.not.equal('0');
+            cy.get('div[class="sc-iyvyFf gljgVk"]').children('h3[class="sc-gzOgki dOfNZq"]').should('have.text', price);
         })
        
     }
