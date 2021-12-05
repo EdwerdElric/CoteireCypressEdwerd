@@ -4,7 +4,7 @@ export default class ProfessionalLiabilityPage {
 
     // Check if the user is able to see the default active link of "General Liability" under the left Main menu.
     checkProfessionalliabilityPage() {
-        cy.get('.sc-frDJqD .activeLink').should('have.text', 'Professional Liability');
+        cy.get('.sc-frDJqD .activeLink').should('have.text', 'professional liability');
     }
     // Check that the user is successfully redirected to the page of Professional Liability .
     verifyProfessionalliabilityPage() {
@@ -13,13 +13,13 @@ export default class ProfessionalLiabilityPage {
     // For professional liability claims amount . 
     selectPlClaims(claims) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[data-cy="multi-button-'+claims+'"]').should(not.be.disabled);
+            cy.get('button[data-cy="multi-button-'+claims+'"]').should('not.be.disabled');
         })
     }
     // For professional liability deductible amount .
     selectPlDeductible(plDeductible) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[data-cy="multi-button-'+plDeductible+'"]').should(not.be.disabled);
+            cy.get('button[data-cy="multi-button-'+plDeductible+'"]').should('not.be.disabled');
         })
         
     }
@@ -44,7 +44,7 @@ export default class ProfessionalLiabilityPage {
         // contains(plEndDate+' years');
     }
     // Professional Experience .
-    selectProfessionalExperience(professionalExp) {
+    selectProfessionalExperience(professionalExp, expYears) {
         cy.fixture('QuoteFlowData',).then(data => {
             cy.get('button[aria-label="Does your industry require professional certifications? '+professionalExp+'"]').should('be.visible');
             cy.get('button[aria-label="Do you maintain professional certifications? '+professionalExp+'"]').should('be.visible');
@@ -65,7 +65,7 @@ export default class ProfessionalLiabilityPage {
         cy.get('div[class="sc-dymIpo iFhGBf"]').children('button[data-cy="multi-button-0"]').should('be.visible');
     }
     // Preform flow .
-    performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, professionalExp) {
+    performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, professionalExp, expYears) {
         this.testChildClass();
         this.checkProfessionalliabilityPage();
         this.verifyProfessionalliabilityPage();
@@ -77,7 +77,7 @@ export default class ProfessionalLiabilityPage {
         // this.checkEstimatedPrice();
         this.selectEndDate(plEndDate);
         // this.checkEstimatedPrice();
-        this.selectProfessionalExperience(professionalExp);
+        this.selectProfessionalExperience(professionalExp, expYears);
         this.checkEstimatedPrice();
     }
 
