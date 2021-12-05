@@ -65,9 +65,11 @@ export default class ProfessionalLiabilityPage {
         
     }
     // Check Estimated price .
-    checkEstimatedPrice(price) {
+    checkEstimatedPrice(price1) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('div[class="sc-iyvyFf gljgVk"]').children('h3[class="sc-gzOgki dOfNZq"]').should('have.text', price);
+            cy.get('div[class="sc-iyvyFf gljgVk"]').children('h3[class="sc-gzOgki dOfNZq"]').then( () => {
+                expect(price1).not.to.equal('$--');
+            })
         })
        
     }
@@ -85,11 +87,11 @@ export default class ProfessionalLiabilityPage {
         this.selectPlDeductible(plDeductible);
         // this.checkEstimatedPrice();
         this.selectPlCoveragePeriod(plCoveragePeriod);
-        // this.checkEstimatedPrice();
+        this.checkEstimatedPrice(price1);
         this.selectEndDate(plEndDate);
-        // this.checkEstimatedPrice();
+        this.checkEstimatedPrice(price1);
         this.selectProfessionalExperience(requirmentEXP, maintainedEXP, professionalExp);
-        this.checkEstimatedPrice(price);
+        this.checkEstimatedPrice(price1);
     }
 
 
