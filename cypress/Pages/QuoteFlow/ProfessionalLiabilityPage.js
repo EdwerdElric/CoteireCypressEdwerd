@@ -65,10 +65,10 @@ export default class ProfessionalLiabilityPage {
         
     }
     // Check Estimated price .
-    checkEstimatedPrice(price1) {
+    checkEstimatedPrice() {
         cy.fixture('QuoteFlowData',).then(data => {
             cy.get('div[class="sc-iyvyFf gljgVk"]').children('h3[class="sc-gzOgki dOfNZq"]').then( () => {
-                expect(price1).not.to.equal('$--');
+                expect('h3[class="sc-gzOgki dOfNZq"]').not.to.equal('$--');
             })
         })
        
@@ -78,7 +78,7 @@ export default class ProfessionalLiabilityPage {
         cy.get('div[class="sc-dymIpo iFhGBf"]').children('button[data-cy="multi-button-0"]').should('be.visible');
     }
     // Preform flow .
-    performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, requirmentEXP, maintainedEXP, professionalExp, price) {
+    performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, requirmentEXP, maintainedEXP, professionalExp, price1) {
         this.testChildClass();
         this.checkProfessionalliabilityPage();
         this.verifyProfessionalliabilityPage();
@@ -87,11 +87,11 @@ export default class ProfessionalLiabilityPage {
         this.selectPlDeductible(plDeductible);
         // this.checkEstimatedPrice();
         this.selectPlCoveragePeriod(plCoveragePeriod);
-        this.checkEstimatedPrice(price1);
+        this.checkEstimatedPrice();
         this.selectEndDate(plEndDate);
-        this.checkEstimatedPrice(price1);
+        this.checkEstimatedPrice();
         this.selectProfessionalExperience(requirmentEXP, maintainedEXP, professionalExp);
-        this.checkEstimatedPrice(price1);
+        this.checkEstimatedPrice();
     }
 
 
