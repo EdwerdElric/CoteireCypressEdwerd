@@ -28,7 +28,7 @@ export default class ProfessionalLiabilityPage {
         cy.fixture('QuoteFlowData',).then(data => {
             cy.get('button[data-cy="multi-button-'+plCoveragePeriod+'"]').should('be.visible');
         if (plCoveragePeriod == 0){
-            cy.get('button[data-cy="multi-button-'+plCoveragePeriod+'"]').contains('None');
+            cy.get('button[data-cy="multi-button-'+plCoveragePeriod+'"]').contains('None').click();
         }
         })
         // contains(plCoveragePeriod+' years');
@@ -38,7 +38,7 @@ export default class ProfessionalLiabilityPage {
         cy.fixture('QuoteFlowData',).then(data => {
             cy.get('button[aria-label="Period after can file a claim: '+plEndDate+'"]').should('be.visible');
             if (plEndDate == 0) {
-                cy.get('button[aria-label="Period after can file a claim: '+plEndDate+'"]').contains('90 days');
+                cy.get('button[aria-label="Period after can file a claim: '+plEndDate+'"]').contains('90 days').click();
             }
         })
         // contains(plEndDate+' years');
