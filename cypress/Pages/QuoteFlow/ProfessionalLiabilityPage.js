@@ -4,7 +4,7 @@ export default class ProfessionalLiabilityPage {
 
     // Check if the user is able to see the default active link of "General Liability" under the left Main menu.
     checkProfessionalliabilityPage() {
-        cy.get('class="sc-hqyNC sc-jbKcbu cFItMM activeLink"').should('be.visible');
+        cy.get('.sc-frDJqD .activeLink').should('have.text', 'Professional Liability');
     }
     // Check that the user is successfully redirected to the page of Professional Liability .
     verifyProfessionalliabilityPage() {
