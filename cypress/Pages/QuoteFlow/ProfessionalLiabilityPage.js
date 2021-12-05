@@ -74,7 +74,7 @@ export default class ProfessionalLiabilityPage {
        
     }
     // Preform flow .
-    performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, requirmentEXP, maintainedEXP, professionalExp, price1) {
+    performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, requirmentEXP, maintainedEXP, professionalExp) {
         this.checkProfessionalliabilityPage();
         this.verifyProfessionalliabilityPage();
         this.selectPlClaims(claims);
