@@ -83,9 +83,9 @@ export default class ProfessionalLiabilityPage {
         this.checkProfessionalliabilityPage();
         this.verifyProfessionalliabilityPage();
         this.selectPlClaims(claims);
-        // this.checkEstimatedPrice();
+        this.checkEstimatedPrice();
         this.selectPlDeductible(plDeductible);
-        // this.checkEstimatedPrice();
+        this.checkEstimatedPrice();
         this.selectPlCoveragePeriod(plCoveragePeriod);
         this.checkEstimatedPrice();
         this.selectEndDate(plEndDate);
