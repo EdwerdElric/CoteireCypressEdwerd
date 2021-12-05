@@ -91,4 +91,28 @@ describe('Professional Liability Test Suite', () => {
 
         }) 
     })
+    it('TC006 Verify that the user is able to submit the professional liability policy form successfully by selecting the amount of deductible $50,000', () => {
+        cy.fixture('QuoteFlowData').then(data => {
+            ProfessionalLiability.performProfessionalLiabilityFlow(data.profissionalLiabilityData.claims[2], data.profissionalLiabilityData.plDeductible[8], data.profissionalLiabilityData.plCoveragePeriod[6], data.profissionalLiabilityData.plEndDate[5], data.profissionalLiabilityData.requirmentEXP[1], data.profissionalLiabilityData.maintainedEXP[1], "4");
+
+        }) 
+    })
+    it('TC007 Verify that the user is able to submit the professional liability policy form successfully by selecting the amount of deductible $1,500', () => {
+        cy.fixture('QuoteFlowData').then(data => {
+            ProfessionalLiability.performProfessionalLiabilityFlow(data.profissionalLiabilityData.claims[3], data.profissionalLiabilityData.plDeductible[3], data.profissionalLiabilityData.plCoveragePeriod[3], data.profissionalLiabilityData.plEndDate[3], data.profissionalLiabilityData.requirmentEXP[1], data.profissionalLiabilityData.maintainedEXP[0], "4");
+
+        }) 
+    })
+    it('TC008 Verify that the user is able to submit the professional liability policy form successfully by selecting the amount of professional liability claims $250', () => {
+        cy.fixture('QuoteFlowData').then(data => {
+            ProfessionalLiability.performProfessionalLiabilityFlow(data.profissionalLiabilityData.claims[0], data.profissionalLiabilityData.plDeductible[3], data.profissionalLiabilityData.plCoveragePeriod[1], data.profissionalLiabilityData.plEndDate[2], data.profissionalLiabilityData.requirmentEXP[0], data.profissionalLiabilityData.maintainedEXP[1], "4");
+
+        }) 
+    })
+    it('TC009 Verify that the user is able to submit the professional liability policy form successfully by selecting the amount of professional liability claims $500.000 experience', () => {
+        cy.fixture('QuoteFlowData').then(data => {
+            ProfessionalLiability.performProfessionalLiabilityFlow(data.profissionalLiabilityData.claims[3], data.profissionalLiabilityData.plDeductible[3], data.profissionalLiabilityData.plCoveragePeriod[5], data.profissionalLiabilityData.plEndDate[5], data.profissionalLiabilityData.requirmentEXP[0], data.profissionalLiabilityData.maintainedEXP[0], "4");
+
+        }) 
+    })
 })
