@@ -128,8 +128,11 @@
             "Yes",
             "No"
         ],
-        "professionalExp": "4",
-        "price1": "$125.83"
+        "professionalExp": [
+            "4",
+            "-5"
+        ]
+        
     }
     
 }
