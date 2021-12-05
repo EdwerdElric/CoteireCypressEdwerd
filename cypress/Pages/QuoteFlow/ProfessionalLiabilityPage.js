@@ -46,8 +46,8 @@ export default class ProfessionalLiabilityPage {
     // Professional Experience .
     selectProfessionalExperience(professionalExp) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[aria-label="Does your industry require professional certifications? '+professionalExp+'"]').contains(professionalExp);
-            cy.get('button[aria-label="Do you maintain professional certifications? '+professionalExp+'"]').contains(professionalExp);
+            cy.get('button[aria-label="Does your industry require professional certifications? '+professionalExp+'"]').should('be.visible');
+            cy.get('button[aria-label="Do you maintain professional certifications? '+professionalExp+'"]').should('be.visible');
             cy.get('input[data-cy="years-of-professional-experience"]').type(expYears).should('have.value', 'expYears');
         })
         // , expYears
