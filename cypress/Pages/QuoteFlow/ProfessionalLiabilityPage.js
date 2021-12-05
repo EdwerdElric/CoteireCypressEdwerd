@@ -26,9 +26,9 @@ export default class ProfessionalLiabilityPage {
     // Policy coverage period .
     selectPlCoveragePeriod(plCoveragePeriod) {
         cy.fixture('QuoteFlowData',).then(data => {
-            cy.get('button[data-cy="multi-button-'+plCoveragePeriod+'"]').click().should('be.visible');
+            cy.get('button[aria-label="Years of prior acts coverage: '+plCoveragePeriod+'"]').click().should('be.visible');
         if (plCoveragePeriod == 0){
-            cy.get('button[data-cy="multi-button-'+plCoveragePeriod+'"]').contains('None').click();
+            cy.get('button[aria-label="Years of prior acts coverage: '+plCoveragePeriod+'"]').contains('None').click();
         }
         })
         // contains(plCoveragePeriod+' years');
@@ -72,10 +72,6 @@ export default class ProfessionalLiabilityPage {
             })
         })
        
-    }
-    // test child
-    testChildClass(){
-        cy.get('div[class="sc-dymIpo iFhGBf"]').children('button[data-cy="multi-button-0"]').should('be.visible');
     }
     // Preform flow .
     performProfessionalLiabilityFlow(claims, plDeductible, plCoveragePeriod, plEndDate, requirmentEXP, maintainedEXP, professionalExp, price1) {
