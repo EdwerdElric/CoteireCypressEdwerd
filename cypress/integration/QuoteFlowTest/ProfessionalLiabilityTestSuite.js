@@ -183,7 +183,7 @@ describe('Professional Liability Test Suite', () => {
     })
     it('TC025 Verify that the user can not submit the professional liability form without selecting any option from coverage period section ', () => {
         cy.fixture('QuoteFlowData').then(data => {
-            ProfessionalLiability.performProfessionalLiabilityFlow(data.profissionalLiabilityData.claims[0], data.profissionalLiabilityData.plDeductible[0], data.profissionalLiabilityData.plEndDate[0], data.profissionalLiabilityData.requirmentEXP[0], data.profissionalLiabilityData.maintainedEXP[0], data.profissionalLiabilityData.professionalExp[0]);
+            ProfessionalLiability.performProfessionalLiabilityFlow(data.profissionalLiabilityData.claims[0], data.profissionalLiabilityData.plDeductible[0], "7", data.profissionalLiabilityData.plEndDate[0], data.profissionalLiabilityData.requirmentEXP[0], data.profissionalLiabilityData.maintainedEXP[0], data.profissionalLiabilityData.professionalExp[0]);
         }) 
     })
 })
