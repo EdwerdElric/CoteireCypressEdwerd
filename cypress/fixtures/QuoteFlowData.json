@@ -111,6 +111,7 @@
             "5",
             "6"
         ],
+        "noSelectPeriod": "0",
         "plEndDate": [
             "0",
             "1",
@@ -120,13 +121,19 @@
             "5",
             "6"
         ],
-        "professionalExp": [
-             "Yes", 
-             "No"
+        "maintainedEXP": [
+             "yes", 
+             "no"
         ],
-        "expYears": "4",
-        "price": "$114.08"
-
+        "requirmentEXP": [
+            "yes",
+            "no"
+        ],
+        "professionalExp": [
+            "4",
+            "-5"
+        ]
+        
     }
     
 }
