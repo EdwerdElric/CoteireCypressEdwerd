@@ -1,56 +1,58 @@
-import GlobalTestObjectsPage from "../Pages/GlobalTestObjectsPage";
-import IndustryPage from "../Pages/IndustryPage";
-import BusinessInformationPage from "../Pages/BusinessInformationPage";
-import LocationsPage from "../Pages/LocationsPage";
-import PoliciesPage from "../pages/PoliciesPage";
-import FinanceBasicPage from "../Pages/FinanceBasicPage";
-import GeneralLiability from "../Pages/GeneralLiabilityPage";
-import AdditionalInsureds from "../Pages/AdditionalInsuredsPage";
-import ContactInformation from "../Pages/ContactInformationPage";
+import GlobalTestObjectsPage from "../../Pages/QuoteFlow/GlobalTestObjectsPage";
+import BusinessInformationPage from "../../Pages/QuoteFlow/BusinessInformationPage";
+import IndustryPage from "../../Pages/QuoteFlow/IndstryPage";
+import PoliciesPage from "../../Pages/QuoteFlow/PoliciesPage";
+import FinanceBasicPage from "../../Pages/QuoteFlow/FinanceBasicPage";
+import LocationsPage from "../../Pages/QuoteFlow/LocationsPage";
+import GeneralLiabilityPage from "../../Pages/QuoteFlow/GeneralLiabilityPage";
+import ProfessionalLiabilityPage from "../../Pages/QuoteFlow/ProfessionalLiabilityPage";
+import AdditionalInsuredsPage from "../../Pages/QuoteFlow/AdditionalInsuredsPage";
 
 
 describe('Additional innsured  Test Suite', () => {
-    const global = new GlobalTestObjectsPage();
+    const globalObjects = new GlobalTestObjectsPage();
     const industry = new IndustryPage();
-    const infopage = new BusinessInformationPage();
+    const businessInfo = new BusinessInformationPage();
     const location = new LocationsPage();
     const policy = new PoliciesPage();
     const finance = new FinanceBasicPage();
-    const general = new GeneralLiability();
-    const AddIn = new AdditionalInsureds();
-    const contact = new ContactInformation();
+    const general = new GeneralLiabilityPage();
+    const AddIn = new AdditionalInsuredsPage();
+    const pl = new ProfessionalLiabilityPage();
 
     beforeEach(() => {
-        cy.clearLocalStorage();
+        
 
-        global.navigateToQuoteFlowApp();
+        globalObjects.navigateTo('Quote Flow');
 
-        cy.fixture('MyData').then(data => {
-            industry.performIndustryFlow(data.businessType);
+        cy.fixture('QuoteFlowData').then(data => {
+            industry.performIndustryFlow(data.industryData.businessType);
         })
 
         //Click Next Button
-        global.clickNextButton();
+        globalObjects.clickNextButton();
 
         //Apply business information
-        infopage.performBusinessInformationFlow("Business Test", "0 - 3", "10 or fewer", "5", "KY", "41008", "yes", "10000", "Total Loss");
+        businessInfo.performBusinessInformationFlow("Business Test", "0 - 3", "11-20", "15", "KY", "41008", "no", "", "");
 
         //Click Next Button
-        global.clickNextButton();
+        globalObjects.clickNextButton();
 
         //Apply Policy Flow
-        policy.selectPolicy('BOP');
+        cy.fixture('QuoteFlowData').then(data => {
+            policy.selectPolicy("PL");
+        })
 
         //Click Next Button
-        global.clickNextButton();
+        globalObjects.clickNextButton();
 
         //Apply Finance basics Flow
 
-        cy.fixture('MyData').then(data => {
-            finance.performFinanceBasicsFlow(data.AnnuallySalesAmount, data.AnnuallyPayrollAmount);
+        cy.fixture('QuoteFlowData').then(data => {
+            finance.performFinanceBasicsFlow(data.financeBasics.annuallySalesAmount, data.financeBasics.annuallyPayrollAmount);
 
         })
-        global.clickNextButton();
+        globalObjects.clickNextButton();
 
 
 
@@ -59,56 +61,62 @@ describe('Additional innsured  Test Suite', () => {
             cy.get('[data-cy="submit"]').click();
             
         })
-        cy.fixture('MyData').then(data => {
-            general.GeneralLiabilityFlow(data.GeneralLiabilityClaim.claim300000, data.GeneralDeductible.ductible2500)
+        // cy.fixture('QuoteFlowData').then(data => {
+        //     pl.performProfessionalLiabilityFlow(data.profissionalLiabilityData.claims[0], data.profissionalLiabilityData.plDeductible[0], data.profissionalLiabilityData.plCoveragePeriod[0], data.profissionalLiabilityData.plEndDate[0], data.profissionalLiabilityData.maintainedEXP[0], data.profissionalLiabilityData.requirmentEXP[0], data.profissionalLiabilityData.professionalExp[0]);
             
 
-        })
+        // })
 
-        global.clickNextButton();
+        globalObjects.clickNextButton();
 
     })
 
-
-    it('Verify the functionality of Adding other people to the policy by using the existing Mailing Address ', () => {
-        cy.fixture('MyData').then(data => {
-            AddIn.PerformAdditionalInsuredsFlow(data.FirstName, data.LastName, data.Email);
-            
-              // 37-Click on the "Next" button .
-        global.clickNextButton();
-
-        })
-
+    it.only('Click on No Button', () => {
+        AddIn.clickOnNoButton();
     })
 
-    it('Verify  the functionality of adding other people to the policy using the full address information manually', () => {
-        cy.fixture('MyData').then(data => {
-            AddIn.PerformAdditionalInsuredsFlowManually(data.FirstName, data.LastName, data.Email, data.ZipCode);
+
+//     it('Verify the functionality of Adding other people to the policy by using the existing Mailing Address ', () => {
+//         cy.fixture('MyData').then(data => {
+//             AddIn.PerformAdditionalInsuredsFlow(data.FirstName, data.LastName, data.Email);
             
-              // 37-Click on the "Next" button .
-        global.clickNextButton();
+//               // 37-Click on the "Next" button .
+//         globalObjects.clickNextButton();
 
-        })
+//         })
 
-    })
+//     })
 
-    it('Verify that the user can choose an exist address button', () => {
-        cy.fixture('MyData').then(data => {
-            AddIn. PerformAdditionalInsuredsFlowSelectExistAddress(data.FirstName, data.LastName, data.Email);
+//     it.only('Verify  the functionality of adding other people to the policy using the full address information manually', () => {
+//         cy.fixture('QuoteFlowData').then(data => {
+//             AddIn.PerformAdditionalInsuredsFlowManually(data.FirstName, data.LastName, data.Email, data.ZipCode);
             
-              // 37-Click on the "Next" button .
-        global.clickNextButton();
+//               // 37-Click on the "Next" button .
+//         globalObjects.clickNextButton();
 
-        })
+//         })
 
-   })
+//     })
 
-    it('Verify the functionality of  the "Delete" button under the contact information box.', () => {
-        cy.fixture('MyData').then(data => {
-            AddIn.PerformAdditionalInsuredsFlowDeleteBUtton(data.FirstName, data.LastName, data.Email)
-        })
+//     it('Verify that the user can choose an exist address button', () => {
+//         cy.fixture('MyData').then(data => {
+//             AddIn. PerformAdditionalInsuredsFlowSelectExistAddress(data.FirstName, data.LastName, data.Email);
+            
+//               // 37-Click on the "Next" button .
+//         global.clickNextButton();
 
-    })
+//         })
+
+//    })
+
+   
+
+    // it('Verify the functionality of  the "Delete" button under the contact information box.', () => {
+    //     cy.fixture('MyData').then(data => {
+    //         AddIn.PerformAdditionalInsuredsFlowDeleteBUtton(data.FirstName, data.LastName, data.Email)
+    //     })
+
+    // })
 
   
 

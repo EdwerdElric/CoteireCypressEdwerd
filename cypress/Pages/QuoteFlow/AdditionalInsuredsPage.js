@@ -5,7 +5,7 @@ export default class AdditionalInsureds {
     //2-Check if the user is able to see the default active link of "Additional Insureds" under the left Main menu 
     cheackLocationLeftMenuADIN() {
       
-        cy.get('<p.sc-hqyNC.sc-jbKcbu.cFItMM.activeLink>').should('have.text' , 'Additional Insureds');
+        cy.get('.sc-frDJqD .activeLink').should('have.text', 'additional insureds');
     }
 
     //3-Check that the user is successfully redirected to the "Additional Insureds" page.
@@ -13,6 +13,11 @@ export default class AdditionalInsureds {
     //     cy.get('.sc-gZMcBi eYTZAk').should('have.text' , 'Additional Insureds');
     // }
 
+    
+    clickOnNoButton() {
+        cy.get('[data-cy="no-additional-insureds"]').click().should('be.visible');
+    }
+    
     //4-Check if "Yes" button is clickable.
     clickOnYesButton() {
 
@@ -33,36 +38,36 @@ export default class AdditionalInsureds {
 
     //7-Check if the user can fill "First name" text box with valid information.
     //8-Fill the "First name" box with a Valid data ex: Test First name.
-    fillFirstName(FirstName) {
-        cy.get('[data-cy=add-ins-first-name]').type(FirstName);
+    fillFirstName(addInsurdFirstName) {
+        cy.get('[data-cy=add-ins-first-name]').type(addInsurdFirstName);
     }
 
     //9-Check the "First name" box is now successfully updated with the correct data (Test First name)
-    firstNameTextBoxContainTheData(FirstName) {
+    firstNameTextBoxContainTheData(addInsurdFirstName) {
 
-        cy.get('input[value="'.concat(FirstName).concat('"]')).should('be.visible');
+        cy.get('input[value="'.concat(addInsurdFirstName).concat('"]')).should('be.visible');
     }
 
     // 10-Check if the user can fill "Last name" text box with valid information.
     // 11-Fill the "Last name" box with a Valid data ex: Test Last name.
-    fillLastName(LastName) {
-        cy.get('[data-cy=add-ins-last-name]').type(LastName);
+    fillLastName(addInsurdLastName) {
+        cy.get('[data-cy=add-ins-last-name]').type(addInsurdLastName);
     }
 
     //12-Check the "Last name" box is now successfully updated with the correct data (Test Last name)
-    LastNameTextBoxContainTheData(LastName) {
-        cy.get('input[value="'.concat(LastName).concat('"]')).should('be.visible');
+    LastNameTextBoxContainTheData(addInsurdLastName) {
+        cy.get('input[value="'.concat(addInsurdLastName).concat('"]')).should('be.visible');
     }
 
     // 13-Check if the user can fill "Email" text box with valid information.
     // 14-Fill the "Email" box with a Valid data ex: test@test.com.
-    fillEmail(Email) {
-        cy.get('[data-cy=add-ins-email]').type(Email);
+    fillEmail(addIsurdEmail) {
+        cy.get('[data-cy=add-ins-email]').type(addIsurdEmail);
     }
 
     //15-Check the "Email" box is now successfully updated with the correct data (test@test.com)
-    EmailTextBoxContainTheData(Email) {
-        cy.get('input[value="'.concat(Email).concat('"]')).should('be.visible');
+    EmailTextBoxContainTheData(addIsurdEmail) {
+        cy.get('input[value="'.concat(addIsurdEmail).concat('"]')).should('be.visible');
     }
 
     //16-Check if the "Mailing Address" is can be checked.
@@ -216,19 +221,19 @@ export default class AdditionalInsureds {
 
 
 
-    PerformAdditionalInsuredsFlow(FirstName, LastName, Email) {
+    PerformAdditionalInsuredsFlow(addInsurdFirstName, addInsurdLastName, Email) {
 
         this.cheackLocationLeftMenuADIN();
      //   this.verifyLocationsPageTitleADIN();
         this.clickOnYesButton();
         this.checkIfAddPeopleFormIsAppearing();
         this.yesButtonUpdated();
-        this.fillFirstName(FirstName);
+        this.fillFirstName(addInsurdFirstName);
         this.firstNameTextBoxContainTheData(FirstName);
-        this.fillLastName(LastName);
-        this.LastNameTextBoxContainTheData(LastName);
-        this.fillEmail(Email);
-        this.EmailTextBoxContainTheData(Email);
+        this.fillLastName(addInsurdLastName);
+        this.LastNameTextBoxContainTheData(addInsurdLastName);
+        this.fillEmail(addIsurdEmail);
+        this.EmailTextBoxContainTheData(addIsurdEmail);
         this.mailingAddressChickable();
         this.mailingAddressUpdated();
         this.cheackAddPersonIsClickable();

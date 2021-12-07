@@ -1,139 +1,149 @@
-    
-{
-   
-    "industryData": {
-        "businessType": "Accountant",
-        "businessUpdate": "Accountants' (i.e., CPAs) offices, certified public",
-        "unsupportedIndustries": [
-            "tree trimmers",
-            "roofing contractors",
-            "traffic work & flagging",
-            "aerospace equipment",
-            "stucco and stucco products manufacturing",
-            "flame safety controls",
-            "playground installation",
-            "millwrights",
-            "• playground equipment and supplies merchant wholesalers",
-            "caulking materials merchant wholesalers",
-            "oil rigs",
-            "gas stations",
-            "mining"
-        ]
-    },
-    "businessInfoData": {
-        "businessName": "Test business name",
-        "emloyeesNumber": "50",
-        "state": "KY",
-        "zipCode": "41008",
-        "claimAmount": "$10,000"
-    },
-    "policies": {
-        "businessOwnersPolicy": "BOP",
-        "generalLiability": "GL",
-        "professionalLiability": "PL"
-    },
-    "financeBasics": {
-        "annuallySalesAmount": "$555,555",
-        "annuallyPayrollAmount": "$400,000"
-    },
-    "locations": [
-        {
-            "street": "8th",
-            "city": "Carellton",
+    {
+        "industryData": {
+            "businessType": "Accountant",
+            "businessUpdate": "Accountants' (i.e., CPAs) offices, certified public",
+            "unsupportedIndustries": [
+                "tree trimmers",
+                "roofing contractors",
+                "traffic work & flagging",
+                "aerospace equipment",
+                "stucco and stucco products manufacturing",
+                "flame safety controls",
+                "playground installation",
+                "millwrights",
+                "• playground equipment and supplies merchant wholesalers",
+                "caulking materials merchant wholesalers",
+                "oil rigs",
+                "gas stations",
+                "mining"
+            ]
+        },
+        "businessInfoData": {
+            "businessName": "Test business name",
+            "emloyeesNumber": "50",
             "state": "KY",
             "zipCode": "41008",
-            "suppression": [
+            "claimAmount": "$10,000"
+        },
+        "policies": {
+            "businessOwnersPolicy": "BOP",
+            "generalLiability": "GL",
+            "professionalLiability": "PL"
+        },
+        "financeBasics": {
+            "annuallySalesAmount": "$555,555",
+            "annuallyPayrollAmount": "$400,000"
+        },
+        "locations": [
+            {
+                "street": "8th",
+                "city": "Carellton",
+                "state": "KY",
+                "zipCode": "41008",
+                "suppression": [
+                    "yes",
+                    "no"
+                ],
+                "buildingType": {
+                    "type1": "Home",
+                    "type2": "BuildingLeased",
+                    "type3": "BuildingOwned",
+                    "type4": "BuildingLeasedToOthers",
+                    "type5": "CommercialCondoOwned",
+                    "type6": "CommercialCondoLeased",
+                    "type7": "Kiosk",
+                    "type8": "Other"
+                },
+                "deductible": {
+                    "by500": "500",
+                    "by1000": "1000",
+                    "by2500": "2500",
+                    "by5000": "5000",
+                    "by7500": "7500",
+                    "by10000": "10000"
+                },
+                "propertyAndEquipment": "$150,000",
+                "buildingCoverege": "$200"
+            }
+        ],
+        "generalLiabilityData": {
+            "coverage": [
+                "300000",
+                "500000",
+                "1000000"
+            ],
+            "deductible2": [
+                "250",
+                "500",
+                "1000",
+                "2500"
+            ]
+        },
+        "profissionalLiabilityData": {
+            "claims": [
+                "25000",
+                "50000",
+                "250000",
+                "500000",
+                "1000000"
+            ],
+            "plDeductible": [
+                "0",
+                "250",
+                "750",
+                "1500",
+                "2500",
+                "5000",
+                "7500",
+                "20000",
+                "50000"
+            ],
+            "plCoveragePeriod": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "noSelectPeriod": "0",
+            "plEndDate": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "maintainedEXP": [
                 "yes",
                 "no"
             ],
-            "buildingType": {
-                "type1": "Home",
-                "type2": "BuildingLeased",
-                "type3": "BuildingOwned",
-                "type4": "BuildingLeasedToOthers",
-                "type5": "CommercialCondoOwned",
-                "type6": "CommercialCondoLeased",
-                "type7": "Kiosk",
-                "type8": "Other"
-            },
-            "deductible": {
-                "by500": "500",
-                "by1000": "1000",
-                "by2500": "2500",
-                "by5000": "5000",
-                "by7500": "7500",
-                "by10000": "10000"
-            },
-            "propertyAndEquipment": "$150,000",
-            "buildingCoverege": "$200"
+            "requirmentEXP": [
+                "yes",
+                "no"
+            ],
+            "professionalExp": [
+                "4",
+                "-5"
+            ]
+        },
+        "additionalInsurdsData": {
+            "addInsurdFirstName": "First Name",
+            "addInsurdLastName": "Last Name",
+            "addIsurdEmail": "test@email.com"
+        },
+        "contactInformationData": {
+            "contactFirstName": "First",
+            "contactLastName": "Last",
+            "contactEmail": "test@email.test",
+            "contactPhoneNumber": "0012345678",
+            "autoMailAddress": "332 Stoney Ln Cadiz",
+            "contactInfoStreetAddress": "332 Stoney Ln",
+            "contactInfoCity": "Cadiz",
+            "state": "KY",
+            "zipCode": "41008"
         }
-    ],
-    "generalLiabilityData": {
-        "coverage": [
-            "300000",
-            "500000",
-            "1000000"
-        ],
-        "deductible2": [
-            "250",
-            "500",
-            "1000",
-            "2500"
-        ]
-
-    
-    },
-    "profissionalLiabilityData": {
-        "claims": [
-            "25000",
-            "50000",
-            "250000",
-            "500000",
-            "1000000"
-        ],
-        "plDeductible": [
-            "0",
-            "250",
-            "750",
-            "1500",
-            "2500",
-            "5000",
-            "7500",
-            "20000",
-            "50000"
-        ],
-        "plCoveragePeriod": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"
-        ],
-        "noSelectPeriod": "0",
-        "plEndDate": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"
-        ],
-        "maintainedEXP": [
-             "yes", 
-             "no"
-        ],
-        "requirmentEXP": [
-            "yes",
-            "no"
-        ],
-        "professionalExp": [
-            "4",
-            "-5"
-        ]
-        
     }
-    
-}
