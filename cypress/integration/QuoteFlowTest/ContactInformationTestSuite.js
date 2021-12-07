@@ -1,14 +1,14 @@
 /// <reference types="Cypress" />
 
-import GlobalTestObjectsPage from "../../Pages/QuoteFlow/GlobalTestObjectsPage";
-import BusinessInformationPage from "../../Pages/QuoteFlow/BusinessInformationPage";
-import IndustryPage from "../../Pages/QuoteFlow/IndstryPage";
-import PoliciesPage from "../../Pages/QuoteFlow/PoliciesPage";
-import FinanceBasicPage from "../../Pages/QuoteFlow/FinanceBasicPage";
-import LocationsPage from "../../Pages/QuoteFlow/LocationsPage";
-import GeneralLiabilityPage from "../../Pages/QuoteFlow/GeneralLiabilityPage";
-import AdditionalInsuredsPage from "../../Pages/QuoteFlow/AdditionalInsuredsPage";
-import ContactInforamtionPage from "../../Pages/QuoteFlow/ContactInformationsPages";
+import GlobalTestObjectsPage from "../../../cypress/Pages/QuoteFlow/GlobalTestObjectsPage";
+import BusinessInformationPage from "../../../cypress/Pages/QuoteFlow/BusinessInformationPage";
+import IndustryPage from "../../../cypress/Pages/QuoteFlow/IndstryPage";
+import PoliciesPage from "../../../cypress/Pages/QuoteFlow/PoliciesPage";
+import FinanceBasicPage from "../../../cypress/Pages/QuoteFlow/FinanceBasicPage";
+import LocationsPage from "../../../cypress/Pages/QuoteFlow/LocationsPage";
+import GeneralLiabilityPage from "../../../cypress/Pages/QuoteFlow/GeneralLiabilityPage";
+import AdditionalInsuredsPage from "../../../cypress/Pages/QuoteFlow/AdditionalInsuredsPage";
+import ContactInforamtionPage from "../../../cypress/Pages/QuoteFlow/ContactInformationsPages";
 
 describe('Contact Information Test Suite', () => {
 
